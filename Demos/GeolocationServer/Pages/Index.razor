@@ -1,0 +1,39 @@
+@page "/"
+
+@using BlazorGeolocation
+@inject BlazorGeolocationService blazorGeolocationService
+
+<h1>Geolocation test</h1>
+
+<button @onclick="TriggerGeoLocation">Get location</button>
+
+<br/>
+<br/>
+
+@if (waiting)
+{
+<div>Getting location...</div>
+}
+else if (position != null) {
+    <div>latitude: @position.latitude</div>
+    <div>longitude: @position.longitude</div>
+}
+
+@code
+{
+    private BlazorGeolocationPosition position;
+    private bool waiting;
+
+    public async Task TriggerGeoLocation()
+    {
+        waiting = true;
+        try
+        {
+            position = await blazorGeolocationService.GetPositionAsync();;
+        }
+        finally
+        {
+            waiting = false;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>Christian Pradelli</Authors>
+	  <Company />
+	  <Description>Geolocation component for Blazor using jsInterop</Description>
+	  <RepositoryUrl>https://github.com/kattunga/BlazorGeolocation</RepositoryUrl>
+	  <PackageTags>Blazor Geo Location</PackageTags>
+	  <PackageLicenseFile></PackageLicenseFile>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>
