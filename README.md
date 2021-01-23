@@ -25,7 +25,7 @@ dotnet add package BlazorGeolocation
 
 ### 2. add scoped service BlazorGeolocationService
 
-For blazor wasm, in startup.cs add
+For blazor wasm, in startup.cs
 ```
     public class Program
     {
@@ -43,7 +43,7 @@ For blazor wasm, in startup.cs add
     }
 ```
 
-For blazor server, in program.cs add:
+For blazor server, in program.cs
 ```
         public void ConfigureServices(IServiceCollection services)
         {
