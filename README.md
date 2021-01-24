@@ -7,7 +7,7 @@ Geolocation component for Blazor using JSInterop
 
 ## Prerequisites
 
-NET 5.0 or above
+NET 5.0 or newer
 
 ## Installation
 
@@ -25,7 +25,7 @@ dotnet add package BlazorGeolocation
 
 ### 2. add scoped service BlazorGeolocationService
 
-For blazor wasm, in startup.cs
+For blazor wasm, in `startup.cs`
 ```
     public class Program
     {
@@ -43,7 +43,7 @@ For blazor wasm, in startup.cs
     }
 ```
 
-For blazor server, in program.cs
+For blazor server, in `program.cs`
 ```
         public void ConfigureServices(IServiceCollection services)
         {
