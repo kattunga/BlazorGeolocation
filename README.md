@@ -11,7 +11,7 @@ NET 5.0 or newer
 
 ## Installation
 
-### 1. NuGet packages
+### 1. Install NuGet package
 
 ```
 Install-Package BlazorGeolocation
