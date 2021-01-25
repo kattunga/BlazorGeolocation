@@ -14,9 +14,23 @@
 {
 <div>Getting location...</div>
 }
-else if (position != null) {
-    <div>latitude: @position.latitude</div>
-    <div>longitude: @position.longitude</div>
+else if (position != null)
+{
+    if (position.ErrorCode != null)
+    {
+        <div>ErrorCode: @position.ErrorCode</div>
+        <div>ErrorMessage: @position.ErrorMessage</div>
+    }
+    else
+    {
+        <div>Accuracy: @position.Accuracy</div>
+        <div>Latitude: @position.Latitude</div>
+        <div>Longitude: @position.Longitude</div>
+        <div>AltitudeAccuracy: @position.AltitudeAccuracy</div>
+        <div>Altitude: @position.Altitude</div>
+        <div>Heading: @position.Heading</div>
+        <div>Speed: @position.Speed</div>
+    }
 }
 
 @code
@@ -29,7 +43,7 @@ else if (position != null) {
         waiting = true;
         try
         {
-            position = await blazorGeolocationService.GetPositionAsync();;
+            position = await blazorGeolocationService.GetPositionAsync(true, 10000, 0);;
         }
         finally
         {

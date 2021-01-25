@@ -18,13 +18,13 @@ namespace BlazorGeolocation
         public BlazorGeolocationService(IJSRuntime jsRuntime)
         {
             moduleTask = new (() => jsRuntime.InvokeAsync<IJSObjectReference>(
-                "import", "./_content/BlazorGeolocation/geolocationJsInterop.js").AsTask());
+                "import", "./_content/BlazorGeolocation/geolocationJsInterop.js?v=0.1.1").AsTask());
         }
 
-        public async ValueTask<BlazorGeolocationPosition> GetPositionAsync()
+        public async ValueTask<BlazorGeolocationPosition> GetPositionAsync(bool enableHighAccuracy = false, double timeout = 5000, double maximumAge = 0)
         {
             var module = await moduleTask.Value;
-            return await module.InvokeAsync<BlazorGeolocationPosition>("getCurrentPosition");
+            return await module.InvokeAsync<BlazorGeolocationPosition>("getCurrentPosition", enableHighAccuracy, timeout, maximumAge);
         }
 
         public async ValueTask DisposeAsync()
